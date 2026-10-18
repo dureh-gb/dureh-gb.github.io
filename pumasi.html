@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>품앗이 Pumasi · 두레공방</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Gothic+Coding:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="./">두레공방</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="lang-en" type="button" aria-pressed="true" data-set="en">EN</button>
+      <button id="lang-ko" type="button" aria-pressed="false" data-set="ko">한국어</button>
+    </div>
+  </header>
+  <nav class="crumb"><a href="./"><span class="en">← All projects</span><span class="ko">← 전체 프로젝트</span></a></nav>
+  <section class="pumasi">
+    <div class="stack">
+      <span class="eyebrow en">Project</span><span class="eyebrow ko">프로젝트</span>
+      <h1>품앗이<small>Pumasi</small></h1>
+      <p class="en"><em>Pumasi</em> means trading a hand of work: you help with my field today, I help with yours tomorrow. Pumasi lets you see and control your own computers over SSH. It opens no ports and uses no cloud relay.</p>
+      <p class="ko"><em>품앗이</em>는 오늘 내 밭일을 도와주면 내일 네 밭일을 돕는, 일을 주고받는 풍습입니다. 품앗이는 SSH로 내 컴퓨터의 화면을 보고 조작하게 해 줍니다. 포트를 열지 않고, 클라우드 중계도 쓰지 않습니다.</p>
+    </div>
+
+    <div class="wire" aria-label="How Pumasi connects">
+      <div class="node">
+        <b class="en">Pumasi Viewer</b><b class="ko">품앗이 뷰어</b>
+        <span>Windows</span>
+      </div>
+      <div class="pipe">
+        <span class="l en">← screen, H.264</span><span class="l ko">← 화면, H.264</span>
+        <span class="ssh">SSH</span>
+        <span class="l en">keys &amp; mouse →</span><span class="l ko">키보드·마우스 →</span>
+      </div>
+      <div class="node host">
+        <b class="en">Pumasi host</b><b class="ko">품앗이 호스트</b>
+        <span>macOS · Linux</span>
+      </div>
+    </div>
+
+    <dl class="facts">
+      <div><dt class="en">Connection</dt><dt class="ko">연결</dt>
+        <dd class="en">Your existing SSH keys and host pins. Nothing new listens on the network.</dd>
+        <dd class="ko">이미 쓰는 SSH 키와 호스트 확인을 그대로 씁니다. 네트워크에서 새로 열리는 것은 없습니다.</dd></div>
+      <div><dt class="en">At the computer</dt><dt class="ko">호스트 쪽</dt>
+        <dd class="en">Sharing is visible on the host, with switches for control and screen resolution.</dd>
+        <dd class="ko">공유 중임이 호스트 화면에 표시되고, 조작과 해상도 변경은 호스트의 스위치로 허용합니다.</dd></div>
+      <div><dt class="en">Status</dt><dt class="ko">상태</dt>
+        <dd><span class="status en">Private beta</span><span class="status ko">비공개 베타</span></dd></div>
+    </dl>
+  </section>
+  <footer>
+    <span>© 2026 두레공방 Dureh Gong-bang</span>
+    <a href="https://github.com/dureh-gb">github.com/dureh-gb</a>
+  </footer>
+</div>
+<script src="lang.js"></script>
+</body>
+</html>
