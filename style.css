@@ -111,3 +111,13 @@ ul.plain { margin: 0; padding-left: 1.2rem; display: grid; gap: .5rem; }
   .projects .what, .projects .meta { grid-column: 1; }
   .projects .go { grid-row: 1; grid-column: 2; }
 }
+
+/* Setup guides: numbered steps with a straw numeral; commands in a panel. */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 2.5rem; counter-reset: step; }
+.steps > li { counter-increment: step; display: grid; gap: .9rem; padding-left: 3rem; position: relative; min-width: 0; }
+.steps > li::before { content: counter(step); position: absolute; left: 0; top: .1rem; font: 700 1.6rem/1 var(--display); color: var(--straw); }
+.steps h2 { font-size: 1.35rem; }
+code { font: 400 .9em/1.5 var(--mono); }
+pre { margin: 0; background: var(--panel); border-radius: 8px; padding: .8rem 1rem; overflow-x: auto; }
+pre code { font-size: .85rem; white-space: pre; }
+.steps .facts div { align-content: start; }
