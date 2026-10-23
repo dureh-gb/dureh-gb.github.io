@@ -1,0 +1,17 @@
+/* The site's palette and type (style.css): indigo dye on ramie paper, rice-straw accent, Nanum fonts. */
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+:root {
+  --md-text-font: "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --md-code-font: "Nanum Gothic Coding", ui-monospace, Consolas, monospace;
+}
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #23356b; --md-primary-fg-color--light: #3a4f8f; --md-primary-fg-color--dark: #1a2852;
+  --md-accent-fg-color: #c99a2e; --md-default-bg-color: #f3f4f1; --md-typeset-a-color: #23356b;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #8fa6e6; --md-primary-fg-color--light: #a9bcf0; --md-primary-fg-color--dark: #6f88cc;
+  --md-accent-fg-color: #e0b552; --md-default-bg-color: #12161f; --md-typeset-a-color: #8fa6e6;
+  --md-hue: 225;
+}
+.md-typeset h1, .md-typeset h2, .md-header__topic { font-family: "Nanum Myeongjo", "Noto Serif KR", Georgia, serif; }
+.md-typeset img { border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; }

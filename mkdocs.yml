@@ -1,0 +1,93 @@
+# 두레공방 documentation (draft). Sources: docs-src/ (Markdown). Build locally: see DOCS.md.
+# Each module builds to its own path: /dureh/, /pumasi/, /viewer/, /masil/, /munjigi/, …
+site_name: 두레공방 Docs
+site_url: https://dureh-gb.github.io/
+site_description: Documentation for Dureh, Pumasi, Pumasi Viewer, Masil and Munjigi.
+copyright: © 2026 두레공방 Dureh Gong-bang
+docs_dir: docs-src
+site_dir: _build
+use_directory_urls: true
+strict: true
+theme:
+  name: material
+  language: en
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle: {icon: material/weather-night, name: Dark mode}
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle: {icon: material/weather-sunny, name: Light mode}
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc: {permalink: true}
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed: {alternate_style: true}
+  - pymdownx.highlight: {anchor_linenums: true}
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+plugins:
+  - search
+not_in_nav: |
+  /_templates/*
+nav:
+  - Home: index.md
+  - Dureh:
+      - dureh/index.md
+      - Getting started: dureh/getting-started.md
+      - Use cases: dureh/use-cases.md
+      - Reference: dureh/reference.md
+      - Troubleshooting: dureh/troubleshooting.md
+      - Security and privacy: dureh/security.md
+  - Pumasi:
+      - pumasi/index.md
+      - Getting started: pumasi/getting-started.md
+      - Use cases: pumasi/use-cases.md
+      - Protocol: pumasi/protocol.md
+      - Command line: pumasi/cli.md
+      - Troubleshooting: pumasi/troubleshooting.md
+      - Security and privacy: pumasi/security.md
+  - Pumasi Viewer:
+      - viewer/index.md
+      - Getting started: viewer/getting-started.md
+      - Use cases: viewer/use-cases.md
+      - Reference: viewer/reference.md
+      - Troubleshooting: viewer/troubleshooting.md
+  - Masil:
+      - masil/index.md
+      - Getting started: masil/getting-started.md
+      - Use cases: masil/use-cases.md
+      - Reference: masil/reference.md
+      - Troubleshooting: masil/troubleshooting.md
+  - Munjigi:
+      - munjigi/index.md
+      - Getting started: munjigi/getting-started.md
+      - Use cases: munjigi/use-cases.md
+      - Reference: munjigi/reference.md
+      - Troubleshooting: munjigi/troubleshooting.md
+  - More:
+      - Saecham: saecham/index.md
+      - Jipsa: jipsa/index.md
+      - Dwitgan: dwitgan/index.md
