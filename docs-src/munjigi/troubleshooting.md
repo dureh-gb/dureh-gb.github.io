@@ -83,7 +83,11 @@ You acted on another account, and the code was missing, wrong or already used, o
 
 ## `SecondFactorLocked` (version 0.3.0)
 
-Five wrong codes lock your second factor for 15 minutes. Wait, then try again with a fresh code.
+Five wrong codes in a row lock your second factor. The message tells you how long the lock lasts.
+
+- The first lockout lasts 15 minutes, the second 30 minutes, the third 60 minutes. Wait, then try again with a fresh code.
+- The fourth lockout does not end by itself. An admin runs `sudo munjigi 2fa unlock <you>` at the computer. Your secret stays the same, so your authenticator app keeps working.
+- A correct code starts the count again from zero.
 
 If you lost your authenticator, an admin runs `sudo munjigi 2fa enroll <you> --replace` at the computer to issue a new secret.
 

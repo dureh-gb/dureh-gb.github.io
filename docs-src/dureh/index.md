@@ -52,7 +52,7 @@ Nodes can be Linux or macOS. A Mac node gives login, terminal, Files, tmux sessi
 
 - **Your data stays yours.** Dureh, Pumasi and Masil do not collect or upload it.
 - **No surprises on your machines.** Credentials, SSH config, services and network exposure change only after you review the exact target and confirm it.
-- **Passwords.** They go only to the SSH server that checks them, for one login, and are never stored. Pumasi never handles a password.
+- **Passwords.** An SSH password goes only to the SSH server that checks it, for one login, and is never stored. Pumasi never stores a password. The one exception: unlocking a Mac's lock screen from the Screen view, when the person at the Mac has allowed it. Then the password you type passes through to the lock screen as ordinary keystrokes, never logged or stored.
 
 ## Pages
 

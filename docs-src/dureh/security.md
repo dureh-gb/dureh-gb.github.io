@@ -23,7 +23,7 @@ What Dureh keeps, where it keeps it, what it never does, and which permissions y
 | **ssh-agent identity** | Dureh asks your agent to sign; it never reads the key. |
 | **Keys made on a node** | Private keys made from Properties › Account › SSH keys stay on that node in that account. Dureh registers only public keys, after you confirm the target. |
 | **Agent CLI sign-in** | You type it into the CLI in a terminal. Dureh never sees the token and never reads it. |
-| **Pumasi** | Never handles a password. |
+| **Pumasi** | Has no password field and never stores a password. One exception, on macOS only: while the person at the Mac allows lock screen control, the lock-screen password you type in the Screen view passes through SSH and Pumasi to the Mac's lock screen as ordinary keystrokes. It is never logged or stored. See [Pumasi security](../pumasi/security.md#lock-screen-control-macos). |
 
 ## Host keys
 

@@ -188,7 +188,7 @@ lights instead of text; tap a light for its line. A light for held-back input al
 Limits: files up to 8 GiB, folders up to 128 entries and 8 levels deep; links, special files and credential files
 (such as `.ssh`) are refused. Each transfer is checked by size and SHA-256. An existing file on the host is replaced
 only after you confirm it, and only if it has not changed in the meantime. One transfer runs at a time across all
-Files tabs, and the app must stay in the foreground until it ends.
+Files tabs. If Android closes the app during a transfer, the transfer stops; it does not resume.
 
 ## Settings
 
@@ -216,8 +216,11 @@ Page Down, F1–F12, `|`, `~`, `/`, `-`, Ctrl+C, Ctrl+D, Ctrl+Z, Ctrl+L. The row
 
 ### This device's key
 
-The phone's SSH key is an ed25519 key made on the device. Its secret part is wrapped by a hardware-backed Android
-Keystore key and never leaves the phone; it cannot be exported. The public line and its fingerprint are shown here.
+The phone's SSH key is an ed25519 key made on the device. Its secret part is stored encrypted with a key held in
+the Android Keystore, and it never leaves the phone; Masil has no way to export it. On phones whose Keystore is
+backed by secure hardware (a trusted execution environment or StrongBox), that key is kept in the hardware. Masil
+does not require this, so on a phone without such hardware the protection is only as strong as Android's software
+Keystore. The public line and its fingerprint are shown here.
 
 - **Copy public key** copies the `authorized_keys` line.
 - **Copy install command** copies one shell line that appends that line to `~/.ssh/authorized_keys` once; run it

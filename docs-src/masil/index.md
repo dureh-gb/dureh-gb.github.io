@@ -12,14 +12,17 @@ Masil for Android runs on your phone and connects to your computers over SSH. It
   with touch, pinch zoom, a virtual mouse and keyboard input.
 - **Files**: SFTP download and upload, one file at a time, between the computer and the phone.
 
-Masil logs in only with a key it makes on the phone (the *device key*). It never asks for, sends or stores a password
-for normal use. Every computer's host key, and the Pumasi build on it, is pinned after you confirm it; a computer whose
-key or build changed is refused until you decide what to do.
+Masil logs in only with a key it makes on the phone (the *device key*). It never stores a password. It asks for one
+only during the optional one-time key setup, and sends it only to that computer's SSH server for that one login.
+On a Mac whose owner has allowed lock screen control, you can also type the Mac's lock-screen password in the Screen
+tab; those keystrokes go to the Mac's lock screen like any other typing and are never logged or stored. Every
+computer's host key, and the Pumasi build on it, is pinned after you confirm it; a computer whose key or build
+changed is refused until you decide what to do.
 
 | | |
 |---|---|
 | App name | **Masil (beta)** |
-| Current version | 0.1.0-beta.12 (2026-10-22) |
+| Current version | 0.1.0-beta.14 (2026-10-24) |
 | Status | Beta. Each beta installs over the previous one; your nodes, pins and key are kept. |
 | Android | Android 7.0 or newer. Android 17 asks for local network permission. |
 | Works with | Any computer with an SSH server. The Screen tab also needs Pumasi on that computer (Linux or Mac). |

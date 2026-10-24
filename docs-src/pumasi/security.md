@@ -26,7 +26,7 @@ title: Security and privacy
 
     You also need **Remote Login** on (**General › Sharing**). Pumasi only reads whether it is on; it does not change it.
 
-    Pumasi never turns a setting on for you. The **Set up Pumasi…** window and the installer's last page only open the right System Settings pane. Pumasi never asks for, sees or shows a password.
+    Pumasi never turns a setting on for you. The **Set up Pumasi…** window and the installer's last page only open the right System Settings pane. Pumasi never asks for, stores or shows a password. The only time a password passes through Pumasi is when you type it at a locked Mac from a viewer, and only if the person at the Mac allowed that (see [Lock screen control](#lock-screen-control-macos)).
 
 === "Linux"
 
@@ -66,7 +66,7 @@ The curtain lets you work on a Mac remotely without showing the screen to the ro
     - **Use Touch ID**: ends remote control without a lock (when the Mac has Touch ID).
     - **Cancel**: the curtain stays. Remote control waits while the panel is open.
 
-    The same actions are in the menu bar. The panel has no password field: Pumasi never sees a password.
+    The same actions are in the menu bar. The panel has no password field. The macOS lock screen checks the password, not Pumasi.
 - **After a take-back**, remote control pauses for 5 minutes, so the curtain cannot come straight back. The person at the Mac can end the pause with **Allow remote control again**.
 - **The curtain ends** when the viewer lowers it, when its connection stalls or ends, or when the Mac locks.
 - **Fails safe.** If an armed curtain cannot start when the Mac unlocks, Pumasi locks the Mac again rather than show the unlocked desktop. If the curtain loses its input block, it ends and the viewer is told. If Pumasi stops answering, the curtain goes away instead of trapping the person at the Mac.
@@ -82,6 +82,7 @@ Whether a viewer may click and type while the Mac is **locked** (lock screen or 
 - **Turns itself off.** When you turn it on, it stays on for a time you choose: 1 hour to 4 weeks, 8 hours by default. "Never" asks you to confirm once. An optional schedule (a date range or a weekly timetable) limits it further.
 - **Indicator.** While it is on, the menu bar icon shows it: a lock badge (default), "LOCK" with the time left, or a tint. Viewers show a badge too.
 - **Unlock only with the curtain** (on by default). While locked, input is posted only while the curtain is up, so nobody at the Mac sees the remote unlock or what follows. A viewer can arm the curtain while the Mac is locked: it comes up the moment the Mac unlocks.
+- **Your password passes through as keystrokes.** While lock screen control is on, the keys you type in a viewer at the Mac's lock screen, including the password, travel over SSH and through Pumasi to the lock screen, like any other typing. Pumasi treats them as ordinary input: it never logs, stores or reuses them, and it has no password field or password store. This applies only to the macOS lock screen.
 - **Typing is slowed down while locked** (on by default): 10 characters a second, at most 5 Returns a minute, then a 60-second wait; at most 30 clicks a minute. You can adjust these at the Mac. Guessing a password from a viewer takes very long.
 - **Fails closed.** Unreadable or invalid settings turn lock screen control off. Turning off the curtain rule or the rate limit asks you to confirm once.
 - **Not the console.** If another account is at the Mac's screen (fast user switching), input from a background account is always dropped, whatever these settings say.
@@ -94,7 +95,7 @@ On Linux, lock screen control is not yet available.
 
 - **Input.** No key, character, typed text or pointer position reaches a log, a status reply, a notice or a file. Pumasi logs only that lines were dropped and how many, or how long to wait. On macOS, a test checks this on every build: it sends a marker through every input path and searches every output, including the system log, for it.
 - **Screen content and names.** Logs carry display ids, sizes, encoders and reasons only.
-- **Passwords.** Pumasi never asks for, sees or stores a password.
+- **Passwords.** Pumasi never asks for, stores or reuses a password, and it takes no part in SSH login. One exception, on macOS only: while [lock screen control](#lock-screen-control-macos) is on, a lock-screen password typed in a viewer passes through Pumasi as ordinary keystrokes. Like all input, it is never logged or stored.
 - **Portal tokens (Linux).** The restore token is kept in a file readable only by the account, and never written to the journal.
 
 Pumasi stores only its own settings and state, in `~/.local/state/dureh/pumasi/`. Its files there are readable only by the account.

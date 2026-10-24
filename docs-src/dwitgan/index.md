@@ -14,18 +14,20 @@ With Windows auto-logon, a PC boots straight to an unlocked desktop. Dwitgan is 
 
 Dwitgan has one switch, **Active**:
 
-- **Active:** it locks the session now, and locks it again after a quiet spell with no keyboard or mouse input.
+- **Active:** it locks the session now, and locks it again after a quiet spell with no keyboard or mouse input (5 minutes by default).
 - **Inactive:** it does nothing.
 
-You change the state by hand (the tray menu, or `dwitgan on` / `dwitgan off`) or by schedule. A rule names the days and a time window, such as weekdays 08:00 to 16:00, or a single time of day. When Dwitgan starts inside a window, it activates at once, so an auto-logged-in desktop is locked within seconds. **Pause** keeps it off until a time you choose, for example until tomorrow, when you need the computer yourself.
+Dwitgan is active from the moment it starts. It starts shortly after you sign in, so an auto-logged-in desktop is locked within seconds. There are no schedules: the computer should simply be locked whenever nobody is at it.
 
-A tray icon shows the state: a shield while active. The menu has **Active**, **Lock now**, **Pause until tomorrow**, **Resume**, the rules, and the config file.
+You change the state by hand, from the tray menu or with `dwitgan on` / `dwitgan off`. **Off** lasts until you turn it on again or until the next sign-in, so a restart always comes back locked. **Pause** keeps it off until a time you choose, for example until tomorrow, when you need the computer yourself. A pause survives a restart.
+
+A tray icon shows the state; it changes while Dwitgan is active. The menu has **Active**, **Lock now**, **Pause until tomorrow**, **Resume**, and **Open config**.
 
 ## What it never does
 
 - It never reads, stores or handles a password.
 - It never listens on the network, and never blocks or interferes with remote access.
-- It needs no admin rights and installs no service or driver. Autostart is one per-user Run entry, written only when you ask for it.
+- It needs no admin rights and installs no service or driver. It starts at sign-in through one Task Scheduler task that runs only for your account, with your own limited rights. Installing version 0.3 removes the older autostart entry that version 0.2 used. Uninstalling removes the task.
 - It hides nothing: while it runs, its tray icon is visible.
 
 ## Limits

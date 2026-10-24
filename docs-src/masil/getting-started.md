@@ -112,8 +112,8 @@ info, full screen, disconnect. Swipe up on the panel to hide it again.
 
 On the node card tap the **Files** icon. The tab connects and lists the account's start folder. Use **Up** and tap
 folders to move around, tap a file to download it to a place you choose on the phone, and **Upload** to send a file
-from the phone into the current folder. One transfer runs at a time, and the app must stay in the foreground until
-it ends.
+from the phone into the current folder. One transfer runs at a time. Keep Masil open until it ends: if Android
+closes the app, the transfer stops and must be started again.
 
 ## Masil for Windows
 
