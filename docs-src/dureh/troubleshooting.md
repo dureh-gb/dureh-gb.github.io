@@ -12,7 +12,7 @@ Problems seen in real use of Dureh 0.2.0-beta.x, with what to do. For Pumasi on 
 The `.deb` sits in a folder that other users cannot enter, usually your home folder. The install itself may still succeed; check with `dpkg-query -s dureh`. To avoid the warning, copy the file to a folder apt can read (for example a new folder under `/tmp`) and install from there. Do not change your home folder's permissions and do not turn off apt's sandbox.
 
 **macOS refuses to open the app.**
-The app is ad-hoc signed and not notarized. Control-click it and choose **Open** once.
+The app is ad-hoc signed and not notarized. On macOS 15 and later, Control-click → **Open** no longer works: open the app once, then go to *System Settings › Privacy & Security* and click **Open Anyway** next to the message about the app, and confirm.
 
 **After an update: "A saved item could not be read and was kept unchanged" or "The automatic backup before this version could not be written".**
 Open **Settings › Data**. The **Notices** row names the store and where it was kept (`<store>.corrupt-<time>`). Nothing was deleted. If the automatic backup failed, make one with **Back up…** before you go on.

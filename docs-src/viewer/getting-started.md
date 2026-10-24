@@ -73,7 +73,7 @@ Pumasi needs permission to capture the screen and to take input. The viewer can 
 
 Select a node in the home window and click **Permissions…**. The dialog shows two lines, *Screen* and *Control*, with a short hint each, and these buttons:
 
-- **Request screen permission**: on a Mac, shows the macOS prompt once; on Linux, opens the Remote Desktop dialog on the node, where someone chooses *Share*.
+- **Request screen permission**: on a Mac, shows the macOS prompt once, on the Mac's own screen (someone at the Mac must allow it); on Linux, opens the Remote Desktop dialog on the node, where someone chooses *Share*.
 - **Request control** (Mac only): shows the macOS Accessibility prompt. On Linux, control is part of the same Remote Desktop dialog (*Allow Remote Interaction*).
 - **Check again**: reads the state once more. On a Mac, Pumasi restarts so that it sees a newly granted permission.
 
