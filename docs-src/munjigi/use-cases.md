@@ -26,7 +26,7 @@ Add the account to `managed` in `/etc/dureh/munjigi.json`:
 { "admins": ["alice"], "managed": ["builder"], "inUseSeconds": 300 }
 ```
 
-Then `alice` can run `munjigi start builder`.
+Then `alice` can run `munjigi start builder --code 123456`, with her own current one-time code. From version 0.3.0, `builder` is another account, so the code is required.
 
 ## A shared family or office computer
 
@@ -42,4 +42,4 @@ Once the screen has had no keyboard or mouse input for `inUseSeconds` (default 3
 
 ## Extra protection for admins (version 0.3.0)
 
-From version 0.3.0, an admin who acts on another account must also give a one-time code from an authenticator app. A stolen SSH key alone is then not enough to open someone else's desktop. Five wrong codes lock the second factor for 15 minutes.
+From version 0.3.0, an admin who acts on another account must also give a one-time code from an authenticator app. A stolen SSH key alone is then not enough to open someone else's desktop. Five wrong codes in a row lock the second factor for 15 minutes, then 30, then 60. After the fourth lockout, an admin must run `sudo munjigi 2fa unlock <account>` at the computer.

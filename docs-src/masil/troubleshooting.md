@@ -84,15 +84,25 @@ size, or from the assistant menu › Font size.
 
 ## Sessions in the background
 
-Android drops a backgrounded app's network sockets. What this means for each kind of session:
+While at least one session tab is open, Masil keeps running in the background, so switching to another app or
+locking the phone does not end your sessions. A quiet notification, *Masil: N sessions open*, shows while it does.
+Tap it to return to Masil, or tap **Disconnect** to end every session at once. On Android 13 and newer, Masil asks
+once for permission to show notifications; if you say no, it still keeps the sessions open, but the notification
+appears only in the system's list of running apps. The notification shows only the number of sessions, never a
+node name or address.
 
-- **Terminal**: after Home or a long time in the background, the shell on the computer may still be alive but the
-  phone's side of the connection is gone, and the tab shows *Not connected* or an ended state. Tap **Reconnect** on
-  the card or in the assistant menu; it starts a new shell. Nothing is reconnected automatically yet.
-- **Screen**: coming back to the tab resumes the running stream when it is still there; otherwise tap **Connect**.
-- **Files**: the tab checks the connection and logs in again (same pins) before each step. A running transfer
-  needs the app in the foreground until it ends; there is no foreground service yet, so a transfer stops if Android
-  kills the app. Transfers do not resume; start them again.
+Android can still close connections or the app itself, for example to save battery, after a network change, or when
+you swipe Masil away from the recent apps list (that ends every session). What happens then:
+
+- **Terminal**: if the connection was dropped while Masil was in the background, the tab reconnects by itself when
+  you come back, with the same pins. This opens a **new shell** on the computer: the old shell's scrollback stays on
+  the phone, but programs that ran in the old shell are not brought back. A shell that you ended yourself (`exit`,
+  Ctrl-D, `logout`) or a tab you disconnected is not reopened. You can always tap **Reconnect** on the card or in the
+  assistant menu; it also starts a new shell.
+- **Screen**: coming back to the tab resumes the running stream when it is still there. If the stream was dropped
+  in the background, the tab connects again by itself.
+- **Files**: the tab checks the connection and logs in again (same pins) before each step. If Android closes the
+  app during a transfer, the transfer stops. Transfers do not resume; start them again.
 
 Switching between tabs or screens inside Masil does not disconnect anything.
 

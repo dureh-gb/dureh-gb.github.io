@@ -15,6 +15,7 @@ title: Reference
 | `munjigi allow-admin --revoke` | Takes that consent back. |
 | `sudo munjigi 2fa enroll <account> [--replace]` | (0.3.0) Enrolls the account's one-time code. Shows a QR code once. `--replace` issues a new secret; old codes stop working. |
 | `sudo munjigi 2fa revoke <account>` | (0.3.0) Removes the account's second factor. |
+| `sudo munjigi 2fa unlock <account>` | (0.3.0) Lifts a lockout of the account's second factor. The secret stays the same, so the authenticator app keeps working. |
 | `munjigi version` | Shows the version. |
 | `munjigi serve` | The service itself. systemd runs it as `munjigi.service`; you do not run it by hand. |
 
@@ -83,7 +84,7 @@ Version 0.3.0 adds this.
 - Acting on another account needs the caller's own one-time code. Acting on your own account, or as `root`, does not.
 - The code is a standard TOTP code: 6 digits, a new code every 30 seconds. Any common authenticator app works.
 - Each code is accepted once. Using the same code again counts as a wrong code.
-- Five wrong codes lock your second factor for 15 minutes.
+- Five wrong codes in a row lock your second factor. The first lockout lasts 15 minutes, the second 30 minutes and the third 60 minutes. The fourth lockout does not end by itself: an admin must run `sudo munjigi 2fa unlock <account>` at the computer. A correct code starts the count again from zero.
 - The secret is stored on the computer for `root` only, in `/etc/dureh/munjigi/totp/<account>`. Only the service checks it. Viewers only pass the code along.
 - Enrollment is done at the computer, with `sudo`. The QR code is shown once, in the terminal. Do not photograph or share it.
 - Passkeys (FIDO2) are not yet available.
@@ -127,7 +128,7 @@ Each refusal shows a stable code and a message, for example `munjigi: InUse: ...
 | `NotAllowed` | The policy does not allow this. |
 | `InUse` | Someone is using the screen. |
 | `NeedsSecondFactor` | (0.3.0) Code missing, wrong or reused, or you are not enrolled. The message shows the tries left. |
-| `SecondFactorLocked` | (0.3.0) Five wrong codes; locked for 15 minutes. |
+| `SecondFactorLocked` | (0.3.0) Five wrong codes in a row. Locked for 15, then 30, then 60 minutes; the fourth lockout lasts until an admin runs `sudo munjigi 2fa unlock <account>`. |
 | `SecondFactorState` | (0.3.0) The service could not record the attempt, so it refused. |
 | `SeatBusy` | `start` while another account has a session on the screen. |
 | `NoSession`, `NotSeat`, `NoAccount` | The target does not exist, is not a screen session, or is not a login account. |
@@ -159,6 +160,6 @@ Each line shows caller, operation, target and result. Codes and secrets are neve
 
 | Version | Date | Change |
 |---|---|---|
-| 0.3.0 | 2026-10-23 | Second factor (TOTP) for acting on another account: `--code`, `2fa enroll`, `2fa revoke`. |
+| 0.3.0 | 2026-10-23 | Second factor (TOTP) for acting on another account: `--code`, `2fa enroll`, `2fa revoke`, `2fa unlock`. |
 | 0.2.0 | 2026-10-22 | `InUse` refusal while someone is at the screen; `Screen` line in `status`; `inUseSeconds` setting. |
 | 0.1.0 | 2026-10-21 | First version: `status`, `activate`, `start`, `allow-admin`. |
