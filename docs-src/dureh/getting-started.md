@@ -35,7 +35,7 @@ This page takes you from the installer to your first node and your first remote 
 
     1. Download the app from the download page and check its SHA-256.
     2. Move it to **Applications**.
-    3. The app is ad-hoc signed and not notarized, so macOS asks for confirmation on first open: **Control-click** the app, then choose **Open**.
+    3. The app is ad-hoc signed and not notarized, so macOS blocks the first open. On macOS 15 and later, Control-click → **Open** no longer works: open the app once, then go to *System Settings › Privacy & Security* and click **Open Anyway** next to the message about the app, and confirm.
 
 ## First launch
 

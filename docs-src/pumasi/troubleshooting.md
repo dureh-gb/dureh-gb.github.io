@@ -9,7 +9,7 @@ title: Troubleshooting
 - **Check SSH first.** From the viewer's device, log in to the host account with a plain SSH client. If that fails, Pumasi cannot work either.
     - macOS: turn on **System Settings › General › Sharing › Remote Login**. **Set up Pumasi…** shows whether it is on.
     - Linux: install and start the SSH server (for example `openssh-server`).
-- **Use the right account.** Pumasi runs only for the account logged in at the host's screen. Connect as that account.
+- **Use the right account.** Pumasi runs only for an account that is logged in on the host. If the account you connect as is not logged in at all, there is no Pumasi to reach (log it in first). If it is logged in but in the background (fast user switching), the stream shows its own desktop but input is dropped until it is back at the screen.
 - **Host key or Pumasi build changed.** Pumasi Viewer refuses a host whose SSH host key or Pumasi build no longer matches what you confirmed. If you reinstalled the host or updated Pumasi, confirm the new values in the viewer. If you did not, do not connect: something else may have changed.
 
 ## Pumasi is not running on the host
@@ -60,7 +60,7 @@ title: Troubleshooting
 
 - **macOS:** allow Pumasi in **Privacy & Security › Accessibility**.
 - **Mac is locked:** input is ignored while the Mac is locked, unless **Allow lock screen control** is on at the Mac. The viewer shows a note. See [Lock screen control](security.md#lock-screen-control-macos).
-- **Another account is at the Mac's screen:** with fast user switching, a background account cannot be controlled. Input is dropped and the viewer says that another account is using the computer.
+- **Another account is at the Mac's screen:** with fast user switching, a background account cannot be controlled. Input is dropped. Dureh says that another account is using the screen; the Windows Pumasi Viewer does not show this yet.
 - **Remote control paused:** after someone took the Mac back from the curtain, remote control pauses for 5 minutes. The person at the Mac can end the pause with **Allow remote control again** in the menu bar.
 - **Linux, Wayland:** input needs the same portal grant as the screen. Accept the Remote Desktop dialog, with keyboard and pointer allowed.
 - **Linux, typed text:** pasting text as typed characters is not yet available on Linux. Single key presses work.
