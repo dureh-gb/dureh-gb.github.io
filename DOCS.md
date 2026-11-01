@@ -2,7 +2,7 @@
 
 The docs are Markdown in `docs-src/`, built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
 into `_build/` (not committed). Each module has its own path: `/dureh/`, `/pumasi/`, `/viewer/`, `/masil/`,
-`/munjigi/`, plus short pages for Saecham, Jipsa and Dwitgan. The hand-written landing pages (`index.html`,
+`/munjigi/`. The hand-written landing pages (`index.html`,
 `dureh.html`, …) stay as they are.
 
 ## Build
