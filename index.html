@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>두레공방 Dureh Gong-bang</title>
-<meta name="description" content="Dureh Gong-bang (두레공방) builds small, private tools for working across your own computers.">
+<meta name="description" content="Dureh Gong-bang (두레공방): a remote-access place for your own computers, with a little room for agents.">
+<meta property="og:title" content="두레공방 Dureh Gong-bang">
+<meta property="og:description" content="A remote-access place for your own computers, with a little room for agents.">
+<meta property="og:image" content="https://dureh-gb.github.io/images/social.png">
+<meta property="og:url" content="https://dureh-gb.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Gothic+Coding:wght@400;700&display=swap">
@@ -13,59 +22,120 @@
 <body data-lang="en">
 <div class="wrap">
   <header class="top">
-    <a class="mark" href="./">두레공방</a>
+    <a class="mark" href="./"><img src="images/seal.svg" alt="" width="40" height="40">두레공방</a>
     <div class="lang" role="group" aria-label="Language">
       <button id="lang-en" type="button" aria-pressed="true" data-set="en">EN</button>
       <button id="lang-ko" type="button" aria-pressed="false" data-set="ko">한국어</button>
     </div>
   </header>
 
-  <section>
-    <h1>두레공방<small>Dureh Gong-bang</small></h1>
-    <p class="lede en">A small workshop that builds private tools for working across your own computers: Mac, Linux, Windows and phone.</p>
-    <p class="lede ko">Mac, Linux, Windows, 휴대폰까지, 내 컴퓨터들을 오가며 일할 수 있게 해 주는 개인용 도구를 만드는 작은 공방입니다.</p>
+  <section class="hero">
+    <img class="seal" src="images/seal.svg" alt="두레공방 seal" width="160" height="160">
+    <div>
+      <h1>두레공방<small>Dureh Gong-bang</small></h1>
+      <p class="lede en">A small workshop building a remote-access place for your own computers, with a little room for agents.</p>
+      <p class="lede ko">내 컴퓨터들을 위한 원격 작업 환경을 짓는 작은 공방입니다. 에이전트 자리도 조금 있습니다.</p>
+    </div>
   </section>
 
   <section class="stack">
-    <span class="eyebrow en">Projects in progress</span><span class="eyebrow ko">진행 중인 프로젝트</span>
+    <span class="eyebrow en">In the workshop</span><span class="eyebrow ko">공방에서 만드는 것</span>
     <ul class="projects">
       <li><a href="dureh.html">
         <b>두레 Dureh</b>
-        <span class="what en">A desk for all your computers: terminal, files, tunnels, screens and agents in one window.</span>
-        <span class="what ko">내 모든 컴퓨터를 위한 작업대. 터미널, 파일, 터널, 화면, 에이전트를 한 창에서.</span>
-        <span class="meta en">Linux · macOS · beta</span><span class="meta ko">Linux · macOS · 베타</span>
+        <span class="what en">All your own computers, gathered at one desk.</span>
+        <span class="what ko">흩어진 내 컴퓨터들을 한 작업대에 모읍니다.</span>
         <span class="go" aria-hidden="true">→</span></a></li>
       <li><a href="pumasi.html">
         <b>품앗이 Pumasi</b>
-        <span class="what en">See and control your own computers over SSH.</span>
-        <span class="what ko">SSH로 내 컴퓨터의 화면을 보고 조작합니다.</span>
-        <span class="meta en">macOS · Linux hosts · private beta</span><span class="meta ko">macOS · Linux 호스트 · 비공개 베타</span>
+        <span class="what en">Lend a hand to the computer across the room.</span>
+        <span class="what ko">건너편 컴퓨터에 손을 빌려줍니다.</span>
         <span class="go" aria-hidden="true">→</span></a></li>
       <li><a href="masil.html">
         <b>마실 Masil</b>
-        <span class="what en">Drop in on your computers from Windows or your phone.</span>
-        <span class="what ko">Windows나 휴대폰에서 내 컴퓨터로 마실 갑니다.</span>
-        <span class="meta en">Windows · Android · in development</span><span class="meta ko">Windows · Android · 개발 중</span>
+        <span class="what en">Drop in on your computers from wherever you are.</span>
+        <span class="what ko">어디서든 내 컴퓨터로 마실 갑니다.</span>
         <span class="go" aria-hidden="true">→</span></a></li>
-      <li><a href="saecham.html">
-        <b>새참 Saecham</b>
-        <span class="what en">Keeps your terminal sessions alive on Windows.</span>
-        <span class="what ko">Windows에서 터미널 세션을 계속 살려 둡니다.</span>
-        <span class="meta en">Windows · planned</span><span class="meta ko">Windows · 계획 중</span>
-        <span class="go" aria-hidden="true">→</span></a></li>
-      <li><a href="jipsa.html">
-        <b>집사 Jipsa</b>
-        <span class="what en">Turns your computers on and off through smart-home plugs.</span>
-        <span class="what ko">스마트홈 플러그로 내 컴퓨터를 켜고 끕니다.</span>
-        <span class="meta en">Linux &middot; Alexa &middot; closed beta</span><span class="meta ko">Linux &middot; Alexa &middot; 클로즈 베타</span>
-        <span class="go" aria-hidden="true">&rarr;</span></a></li>
-      <li><a href="dwitgan.html">
-        <b>뒷간 Dwitgan</b>
-        <span class="what en">A private space: locks an unattended computer while your agents work.</span>
-        <span class="what ko">나만의 공간. 에이전트가 일하는 동안 비어 있는 컴퓨터를 잠가 둡니다.</span>
-        <span class="meta en">Windows &middot; planned</span><span class="meta ko">Windows &middot; 계획 중</span>
-        <span class="go" aria-hidden="true">&rarr;</span></a></li>
     </ul>
+    <p class="more en">There are more tools on the workbench.</p>
+    <p class="more ko">공방에는 다른 도구도 있습니다.</p>
+  </section>
+
+  <section class="stack" id="people">
+    <span class="eyebrow ko">공방 사람들</span><span class="eyebrow en">The workshop</span>
+    <p class="ko">공방 문을 매일 열고 닫는 사람들입니다.</p>
+    <p class="en">The people who open and close the workshop every day.</p>
+
+    <article class="lead">
+      <img src="images/team/soroan-512.webp" srcset="images/team/soroan-256.webp 256w, images/team/soroan-512.webp 512w" sizes="(max-width: 34rem) 9rem, 11rem" alt="" width="176" height="176" loading="lazy">
+      <div>
+        <h2><span class="ko">대표 개발자</span><span class="en">Lead developer</span><small>소로안 (召路安)</small></h2>
+        <p class="quip ko">불러 모으고(召) 길을 닦습니다(路安). 부르는 건 한 번, 길 닦기는 매일.</p>
+        <p class="quip en">Calls people together (召), then paves their road (路安). Calling once, paving daily.</p>
+      </div>
+    </article>
+
+    <div class="crew">
+      <article class="member">
+        <img src="images/team/dopyeonsu-256.webp" srcset="images/team/dopyeonsu-256.webp 1x, images/team/dopyeonsu-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>도편수 <span class="en">Dopyeonsu</span></h3>
+          <p class="quip ko">모두 퇴근한 뒤 마지막으로 문을 잠급니다. "그건 PR로 주세요."</p>
+          <p class="quip en">Last one out, locks the door. "Send it as a PR."</p>
+        </div>
+      </article>
+      <article class="member">
+        <img src="images/team/jangin-256.webp" srcset="images/team/jangin-256.webp 1x, images/team/jangin-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>장인 <span class="en">Jangin</span></h3>
+          <p class="quip ko">"거의 다 됐다"를 "다 됐다"로 바꾸는 사람.</p>
+          <p class="quip en">Turns "almost done" into "done".</p>
+        </div>
+      </article>
+      <article class="member">
+        <img src="images/team/gaekgong-256.webp" srcset="images/team/gaekgong-256.webp 1x, images/team/gaekgong-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>객공 <span class="en">Gaekgong</span></h3>
+          <p class="quip ko">직접 두들겨 본 것만 믿습니다. "여기 틈 있네요."</p>
+          <p class="quip en">Trusts only what he has tapped. "There's a gap here."</p>
+        </div>
+      </article>
+      <article class="member">
+        <img src="images/team/gilson-256.webp" srcset="images/team/gilson-256.webp 1x, images/team/gilson-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>길손 <span class="en">Gilson</span></h3>
+          <p class="quip ko">삿갓 하나로 어디든. 소식은 늘 먼저.</p>
+          <p class="quip en">One straw hat, anywhere. Always hears the news first.</p>
+        </div>
+      </article>
+      <article class="member">
+        <img src="images/team/dancheongjang-256.webp" srcset="images/team/dancheongjang-256.webp 1x, images/team/dancheongjang-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>단청장 <span class="en">Dancheongjang</span></h3>
+          <p class="quip ko">"이 기둥엔 주홍이죠." 손끝에도 조금.</p>
+          <p class="quip en">"This pillar wants vermilion." A little on her fingertips, too.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="crew groups">
+      <article class="member">
+        <img src="images/team/pumkkun-256.webp" srcset="images/team/pumkkun-256.webp 1x, images/team/pumkkun-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>품꾼 <span class="en">Pumkkun</span><span class="tag ko">여럿</span><span class="tag en">a crew</span></h3>
+          <p class="quip ko">돋보기 한 번에 실수 하나. "두 군데만 고치시면 돼요."</p>
+          <p class="quip en">One look, one mistake found. "Just two spots to fix."</p>
+        </div>
+      </article>
+      <article class="member">
+        <img src="images/team/dongja-256.webp" srcset="images/team/dongja-256.webp 1x, images/team/dongja-512.webp 2x" alt="" width="112" height="112" loading="lazy">
+        <div>
+          <h3>동자 <span class="en">Dongja</span><span class="tag ko">여럿</span><span class="tag en">a crew</span></h3>
+          <p class="quip ko">부르면 뛰어가고, 금방 옵니다. "다녀왔습니다!"</p>
+          <p class="quip en">Called, gone, back. "I'm back!"</p>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section class="stack">
@@ -84,11 +154,20 @@
 
   <section class="stack">
     <span class="eyebrow en">The name</span><span class="eyebrow ko">이름</span>
-    <p class="en">Our names come from Korean village life, when neighbours worked the fields together.</p>
-    <p class="ko">이름은 이웃이 함께 들일을 하던 한국 마을의 말에서 가져왔습니다.</p>
+    <p class="en">Our names come from Korean village life, when neighbours worked the fields together, and from the old building crafts.</p>
+    <p class="ko">이름은 이웃이 함께 들일을 하던 한국 마을의 말과 옛 건축 장인들의 말에서 가져왔습니다.</p>
     <div class="words">
       <div class="word"><b>두레 Dureh</b><span class="en">the village work group</span><span class="ko">마을의 공동 작업 모임</span></div>
       <div class="word"><b>공방 Gong-bang</b><span class="en">a workshop</span><span class="ko">물건을 만드는 작업장</span></div>
+    </div>
+    <div class="words small">
+      <div class="word"><b>도편수</b><span class="en">the master carpenter who leads a build</span><span class="ko">집 짓는 일을 이끄는 우두머리 목수</span></div>
+      <div class="word"><b>장인</b><span class="en">a master craftsperson</span><span class="ko">한 가지 기술에 통달한 사람</span></div>
+      <div class="word"><b>객공 客工</b><span class="en">a visiting craftsman, called in for the job</span><span class="ko">다른 곳에서 불려 와 일하는 장인</span></div>
+      <div class="word"><b>길손</b><span class="en">a traveller passing through</span><span class="ko">길 가는 나그네</span></div>
+      <div class="word"><b>단청장</b><span class="en">the painter of the colours on old wooden buildings</span><span class="ko">목조 건물에 단청을 입히는 장인</span></div>
+      <div class="word"><b>품꾼</b><span class="en">a hand hired by the day's work</span><span class="ko">품삯을 받고 일하는 일꾼</span></div>
+      <div class="word"><b>동자 童子</b><span class="en">a young helper who runs errands</span><span class="ko">심부름하는 아이</span></div>
     </div>
   </section>
 

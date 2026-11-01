@@ -54,14 +54,6 @@ This site documents each module. Pick one below.
 
 </div>
 
-## More
-
-Smaller tools around the desk. Each has a short page.
-
-- [새참 Saecham](saecham/index.md): keeps your terminal sessions alive on Windows. Planned.
-- [집사 Jipsa](jipsa/index.md): turns your computers on and off through smart-home plugs. Closed beta.
-- [뒷간 Dwitgan](dwitgan/index.md): locks an unattended computer while your agents work. Planned.
-
 ## Status
 
 The modules are in beta. Dureh and Pumasi are in private beta; Masil is in development. Status lines on each module page say more.
