@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll) settings. The Markdown docs draft is built separately (see DOCS.md) and is not
+# published as-is from this repository root.
+exclude:
+  - docs-src
+  - DOCS.md
+  - mkdocs.yml
+  - requirements-docs.txt
